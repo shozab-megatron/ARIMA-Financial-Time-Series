@@ -96,15 +96,12 @@ pip install pandas numpy matplotlib statsmodels
 
 ## 🧰 Project Structure
 
-```
 ARIMA-Financial-Time-Series/
-│
-├── AAPL10Y.csv                  # 10 years of Apple stock price data
-├── AAPL_ARIMA_Model.ipynb      # Main notebook with model workflow
-├── README.md                   # Project documentation
-├── Media/                      # Screenshots and result plots
-│   └── *.pdf
-```
+├── Media/                    # Screenshots and result plots (PDFs)
+├── AAPL10Y.csv               # 10 years of Apple stock price data
+├── AAPL_ARIMA_Model.ipynb    # Main notebook with ARIMA model workflow
+├── ARIMA Model Summary.pdf   # Model output summary (PDF)
+└── README.md                 # Project documentation
 
 ---
 
