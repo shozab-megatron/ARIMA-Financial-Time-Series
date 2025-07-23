@@ -1,4 +1,4 @@
-# 📈 ARIMA Model for Financial Time Series Forecasting
+# ARIMA Time-Series Forecasting – AAPL Stock Case Study
 
 
 ![Python](https://img.shields.io/badge/Python-3.9-blue)
@@ -10,15 +10,16 @@ This project demonstrates how to build and evaluate an ARIMA model using Python 
 
 ---
 
-## 🚀 Overview
+## Overview
 
-In this project, we use historical stock price data for Apple (AAPL) over 10 years and apply time-series modeling techniques to forecast future stock movements. We clean and aggregate the data, test for stationarity, and tune an ARIMA model based on ACF/PACF analysis. Finally, we visualize the performance of the model by comparing predicted returns against actual data.
-
+In this project, we use historical stock price data for Apple (AAPL) over 10 years and apply time-series modeling techniques to forecast future stock movements. We cleaned and resampled weekly AAPL data, tested for stationarity (ADF), and selected ARIMA(3,0,1) using ACF/PACF lag analysis. 
 This project was completed as part of a Google Cloud Qwiklabs module in Machine Learning for Finance.
+
+> 🧠 Note: This ARIMA forecasting pipeline could be adapted to model time-series patterns in energy markets such as crude oil, natural gas, or electricity pricing — relevant for trading and risk management applications.
 
 ---
 
-## 🧪 Tasks Performed
+## Tasks Performed
 
 - Pulled historical financial data from **Google Cloud Storage** into a Pandas dataframe
 - Cleaned and resampled the data to a **weekly frequency**
@@ -32,7 +33,7 @@ This project was completed as part of a Google Cloud Qwiklabs module in Machine 
 
 ---
 
-## ⚙️ Tools Used
+## Tools Used
 
 - Python (3.9)
 - JupyterLab
@@ -42,7 +43,7 @@ This project was completed as part of a Google Cloud Qwiklabs module in Machine 
 
 ---
 
-## 📊 Sample Outputs
+## Sample Outputs
 
 - 📉 **Weekly Returns Line Plot:** Cleaned and normalized weekly price changes  
 - 📈 **Rolling Mean & Std Dev:** Helps visualize variance and trends  
@@ -54,22 +55,34 @@ This project was completed as part of a Google Cloud Qwiklabs module in Machine 
 
 ---
 
-## 🖼️ Media Gallery – ARIMA Time Series Outputs
+## Forecasting Output Visuals
 
-| 📄 Description                    | 📎 File Link                                     |
-|----------------------------------|--------------------------------------------------|
-| Head of the Cleaned Data         | [View PDF](Media/Head_of_the_Cleaned_Data.pdf)  |
-| Weekly Returns Line Plot         | [View PDF](Media/Weekly_Returns_Line_Plot.pdf)  |
-| Rolling Mean & Standard Deviation| [View PDF](Media/Rolling_Mean_and_Std_Dev.pdf)  |
-| Dickey-Fuller Stationarity Test  | [View PDF](Media/Dickey_Fuller_Test_Output.pdf) |
-| ACF and PACF Correlation Plots   | [View PDF](Media/ACF_and_PACF_Plots.pdf)        |
-| ARIMA Model Summary              | [View PDF](Media/ARIMA_Model_Summary.pdf)       |
-| Prediction vs Actual Performance | [View PDF](Media/Prediction_vs_Actual_Plot.pdf) |
-| 2-Week Forecast Output           | [View PDF](Media/2_Week_Forecast_Plot.pdf)      |
+### 1. Rolling Mean & Standard Deviation  
+Shows variance stability and trends in weekly returns.  
+![Rolling Mean & Std Dev](Media/rolling_stats.png)
 
 ---
 
-## 🎓 Key Learnings
+### 2. ACF & PACF Plots  
+Used to select best ARIMA(3,0,1). Peaks at lags 1–3 were evident.  
+![ACF & PACF](Media/acf_pacf.png)
+
+---
+
+### 3. Fitted Values vs Actual Returns  
+Red = ARIMA fitted values, Blue = true returns.  
+![Predicted vs Actual](Media/pred_vs_actual.png)
+
+---
+
+### 4. 2-Week Forecast  
+Green = forecasted returns beyond training data.  
+![2-Week Forecast](Media/2week_forecast.png)
+
+
+---
+
+## Key Learnings
 
 - Developed intuition for time-series modeling workflows
 - Gained hands-on experience with **ARIMA model tuning**
@@ -81,7 +94,7 @@ This project was completed as part of a Google Cloud Qwiklabs module in Machine 
 
 ---
 
-## 📦 How to Run
+## Run This Project Yourself
 
 1. Clone the repo  
 2. Open `AAPL_ARIMA_Model.ipynb` in JupyterLab  
@@ -94,7 +107,7 @@ pip install pandas numpy matplotlib statsmodels
 
 ---
 
-## 🧰 Project Structure
+## Project Structure
 
 ```
 ARIMA-Financial-Time-Series/
@@ -115,6 +128,6 @@ ARIMA-Financial-Time-Series/
 
 ---
 
-## 📌 Notes
+## Notes
 
 This project was completed during a **Coursera x Google Cloud Qwiklabs** lab on Machine Learning for Finance.
