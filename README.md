@@ -125,12 +125,14 @@ ARIMA-Financial-Time-Series/
 ├── ARIMA_Model_Summary.pdf           # Exported ARIMA summary report
 └── README.md                         # This file
 
+
 ---
 
 ## 🌟 Author
 
 **Shozab Megatron**  
-[LinkedIn](https://www.linkedin.com/in/shozab-n/) • [GitHub](https://github.com/shozab-megatron)
+🔗 [LinkedIn](https://www.linkedin.com/in/shozab-n/) • [GitHub](https://github.com/shozab-megatron)
+⭐ If you found this project helpful, feel free to give it a star or connect with me on LinkedIn!
 
 ---
 
@@ -138,6 +140,5 @@ ARIMA-Financial-Time-Series/
 
 This project was completed as part of the Google Cloud x Coursera "Machine Learning for Finance" program. It demonstrates applied ARIMA forecasting in a financial context using real-world data.
 
-⭐ If you found this project helpful, feel free to give it a star or connect with me on LinkedIn!
-🔗 [LinkedIn – Shozab Naqvi](https://www.linkedin.com/in/shozab-n/)
+
 
