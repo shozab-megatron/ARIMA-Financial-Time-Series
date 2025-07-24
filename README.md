@@ -1,121 +1,130 @@
 # ARIMA Time-Series Forecasting – AAPL Stock Case Study
 
-
 ![Python](https://img.shields.io/badge/Python-3.9-blue)
 ![Jupyter](https://img.shields.io/badge/Notebook-Jupyter-orange)
 ![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
 
-
-This project demonstrates how to build and evaluate an ARIMA model using Python to forecast stock closing prices of Apple Inc. (AAPL). The focus is on transforming raw financial time-series data into actionable insights using statistical modeling techniques in Python.
+This project demonstrates how to build and evaluate an ARIMA model using Python to forecast the weekly closing prices of Apple Inc. (AAPL). It showcases a full time-series pipeline from data preprocessing to forecasting and evaluation using statistical modeling in Python.
 
 ---
 
 ## Overview
 
-In this project, we use historical stock price data for Apple (AAPL) over 10 years and apply time-series modeling techniques to forecast future stock movements. We cleaned and resampled weekly AAPL data, tested for stationarity (ADF), and selected ARIMA(3,0,1) using ACF/PACF lag analysis. 
-This project was completed as part of a Google Cloud Qwiklabs module in Machine Learning for Finance.
+We use 10 years of historical AAPL stock data and apply time-series analysis techniques to forecast future weekly returns. After cleaning, resampling, and log-normalizing the data, we confirm stationarity, select ARIMA parameters using ACF/PACF, and train an ARIMA(3,0,1) model.
 
-> 🧠 Note: This ARIMA forecasting pipeline could be adapted to model time-series patterns in energy markets such as crude oil, natural gas, or electricity pricing — relevant for trading and risk management applications.
+> 🧠 *Note:* This ARIMA forecasting workflow can be applied to other time-series domains, such as crude oil, natural gas, electricity pricing, or macroeconomic indicators — useful in trading and risk management.
 
 ---
 
 ## Tasks Performed
 
-- Pulled historical financial data from **Google Cloud Storage** into a Pandas dataframe
-- Cleaned and resampled the data to a **weekly frequency**
-- Calculated **log returns** to normalize data
-- Verified stationarity using the **Dickey-Fuller test**
-- Visualized rolling statistics (mean & std dev)
-- Plotted **ACF** and **PACF** to determine ARIMA parameters
-- Built and evaluated an ARIMA model using **statsmodels**
-- Compared **predicted returns vs actual values**
-- Forecasted **2 weeks into the future**
+- Imported historical financial data from **Google Cloud Storage** into a Pandas DataFrame
+- Resampled the data to a **weekly frequency**
+- Computed **log returns** to normalize volatility
+- Verified stationarity using the **Augmented Dickey-Fuller (ADF) test**
+- Visualized **rolling mean and standard deviation**
+- Plotted **ACF** and **PACF** to determine model lags
+- Trained an **ARIMA(3,0,1)** model using `statsmodels`
+- Evaluated predictions vs. actuals and forecasted **2 weeks ahead**
 
 ---
 
 ## Tools Used
 
-- Python (3.9)
+- Python 3.9
 - JupyterLab
 - Pandas, NumPy, Matplotlib
 - Statsmodels (ARIMA)
-- Google Cloud Platform (Qwiklabs)
-
----
-
-## Sample Outputs
-
-- 📉 **Weekly Returns Line Plot:** Cleaned and normalized weekly price changes  
-- 📈 **Rolling Mean & Std Dev:** Helps visualize variance and trends  
-- 🔍 **Dickey-Fuller Test:** Confirmed data stationarity (p < 0.05)  
-- 📊 **ACF & PACF Plots:** Used to select best ARIMA (p, d, q) parameters  
-- 🧠 **Model Summary:** ARIMA(3,0,1) fit and evaluation  
-- 🟥 **Prediction vs Actual:** Compared model outputs to historical truth  
-- 🔮 **2-Week Forecast:** Simulated next 2 weeks of market movement
+- Google Cloud Platform (via Qwiklabs)
 
 ---
 
 ## Forecasting Output Visuals
 
 ### 1. Rolling Mean & Standard Deviation  
-Shows variance stability and trends in weekly returns.  
-![Rolling Mean & Std Dev](Media/rolling_stats.png)
+Visual check for stationarity and variance stability in log returns.  
+![Rolling Stats](Media/rolling_mean_std_stationarity.png)
 
 ---
 
 ### 2. ACF & PACF Plots  
-Used to select best ARIMA(3,0,1). Peaks at lags 1–3 were evident.  
-![ACF & PACF](Media/acf_pacf.png)
+Peaks at lags helped inform the ARIMA(3,0,1) model selection.  
+![ACF and PACF](Media/acf_pacf_plots.png)
 
 ---
 
-### 3. Fitted Values vs Actual Returns  
-Red = ARIMA fitted values, Blue = true returns.  
-![Predicted vs Actual](Media/pred_vs_actual.png)
+### 3. ARIMA Model Fit (Training)  
+ARIMA model output fitted over training data.  
+![AR1 Model Fit](Media/ar1_model_fit.png)
 
 ---
 
-### 4. 2-Week Forecast  
-Green = forecasted returns beyond training data.  
-![2-Week Forecast](Media/2week_forecast.png)
+### 4. Residuals Analysis  
+Residuals appeared uncorrelated and normally distributed, indicating a good model fit.  
+![Residuals](Media/residuals_analysis.png)
 
+---
+
+### 5. Forecast vs Actual (Log Returns)  
+Model performance on unseen data — solid alignment.  
+![Forecast vs Actual](Media/forecasted_vs_actual_prices.png)
+
+---
+
+### 6. Train/Test Forecast  
+Green area = 2-week forecast with upper/lower confidence bounds.  
+![2-Week Forecast](Media/train_test_forecast.png)
+
+---
+
+## Results Summary
+
+- **Model Used:** ARIMA(3,0,1)
+- **Forecast Horizon:** 2 weeks ahead
+- **Evaluation:** Visual inspection showed strong alignment between forecasted and actual log returns
+- **Residuals:** No autocorrelation or heteroscedasticity — indicating a well-behaved model
 
 ---
 
 ## Key Learnings
 
-- Developed intuition for time-series modeling workflows
-- Gained hands-on experience with **ARIMA model tuning**
-- Understood the importance of **stationarity** and how to test for it
-- Practiced **reading ACF/PACF plots** to derive lag parameters
-- Strengthened understanding of **model evaluation techniques** (e.g. RMSE, fitted vs actual plots)
-- Learned how to forecast future values and analyze predictive confidence
-- Enhanced notebook documentation and visualization for technical communication
+- Learned how to preprocess financial time-series data for modeling
+- Gained hands-on experience tuning an **ARIMA model**
+- Practiced checking **stationarity** using ADF and rolling statistics
+- Understood how to read **ACF/PACF plots** to select AR/MA lags
+- Visualized **residuals** to assess model performance
+- Generated **short-term forecasts** with confidence intervals
+- Strengthened technical writing and documentation through this notebook
 
 ---
 
-## Run This Project Yourself
 
-1. Clone the repo  
-2. Open `AAPL_ARIMA_Model.ipynb` in JupyterLab  
-3. Run the cells in order  
-4. Ensure `AAPL10Y.csv` is in the same directory  
+## ▶️ Run This Project Yourself
+
+1. Clone the repository  
+2. Open `ARIMA_AAPL_Stock_Forecasting.ipynb` in JupyterLab  
+3. Make sure `AAPL10Y.csv` is in the same folder  
+4. Run the cells in sequence
 
 ```bash
 pip install pandas numpy matplotlib statsmodels
-```
-
----
 
 ## Project Structure
 
 ```
 ARIMA-Financial-Time-Series/
-├── Media/                    # Screenshots and result plots (PDFs)
-├── AAPL10Y.csv               # 10 years of Apple stock price data
-├── AAPL_ARIMA_Model.ipynb    # Main notebook with ARIMA model workflow
-├── ARIMA Model Summary.pdf   # Model output summary (PDF)
-└── README.md                 # Project documentation
+├── Media/                             # Output charts and plots
+│   ├── rolling_mean_std_stationarity.png
+│   ├── acf_pacf_plots.png
+│   ├── ar1_model_fit.png
+│   ├── residuals_analysis.png
+│   ├── forecasted_vs_actual_prices.png
+│   └── train_test_forecast.png
+├── AAPL10Y.csv                        # Raw Apple stock data (10 years)
+├── ARIMA_AAPL_Stock_Forecasting.ipynb # Main notebook
+├── ARIMA_Model_Summary.pdf           # Exported ARIMA summary report
+└── README.md                         # This file
+
 ```
 
 
@@ -130,4 +139,4 @@ ARIMA-Financial-Time-Series/
 
 ## Notes
 
-This project was completed during a **Coursera x Google Cloud Qwiklabs** lab on Machine Learning for Finance.
+This project was completed as part of the Google Cloud x Coursera "Machine Learning for Finance" program. It demonstrates applied ARIMA forecasting in a financial context using real-world data.
