@@ -111,6 +111,7 @@ pip install pandas numpy matplotlib statsmodels
 ```
 ## Project Structure
 
+```
 ARIMA-Financial-Time-Series/
 ├── Media/                             # Output charts and plots
 │   ├── rolling_mean_std_stationarity.png
@@ -123,6 +124,7 @@ ARIMA-Financial-Time-Series/
 ├── ARIMA_AAPL_Stock_Forecasting.ipynb # Main notebook
 ├── ARIMA_Model_Summary.pdf           # Exported ARIMA summary report
 └── README.md                         # This file
+```
 
 ---
 
