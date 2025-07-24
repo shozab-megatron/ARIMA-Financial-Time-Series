@@ -80,7 +80,7 @@ Green area = 2-week forecast with upper/lower confidence bounds.
 ## Results Summary
 
 - **Model Used:** ARIMA(3,0,1)
-- **Forecast Horizon:** 2 weeks ahead
+- **Forecast Horizon:** 10 weeks ahead
 - **Evaluation:** Visual inspection showed strong alignment between forecasted and actual log returns
 - **Residuals:** No autocorrelation or heteroscedasticity — indicating a well-behaved model
 
@@ -109,9 +109,8 @@ Green area = 2-week forecast with upper/lower confidence bounds.
 ```bash
 pip install pandas numpy matplotlib statsmodels
 
-## Project Structure
+## 📁 Project Structure
 
-```
 ARIMA-Financial-Time-Series/
 ├── Media/                             # Output charts and plots
 │   ├── rolling_mean_std_stationarity.png
@@ -125,9 +124,6 @@ ARIMA-Financial-Time-Series/
 ├── ARIMA_Model_Summary.pdf           # Exported ARIMA summary report
 └── README.md                         # This file
 
-```
-
-
 ---
 
 ## 🌟 Author
@@ -140,3 +136,7 @@ ARIMA-Financial-Time-Series/
 ## Notes
 
 This project was completed as part of the Google Cloud x Coursera "Machine Learning for Finance" program. It demonstrates applied ARIMA forecasting in a financial context using real-world data.
+
+⭐ If you found this project helpful, feel free to give it a star or connect with me on LinkedIn!
+🔗 [LinkedIn – Shozab Naqvi](https://www.linkedin.com/in/shozab-n/)
+
