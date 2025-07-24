@@ -123,6 +123,7 @@ ARIMA-Financial-Time-Series/
 ├── ARIMA_AAPL_Stock_Forecasting.ipynb # Main notebook
 ├── ARIMA_Model_Summary.pdf           # Exported ARIMA summary report
 └── README.md                         # This file
+
 ---
 
 ## 🌟 Author
