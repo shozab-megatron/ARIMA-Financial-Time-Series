@@ -3,6 +3,8 @@
 ![Python](https://img.shields.io/badge/Python-3.9-blue)
 ![Jupyter](https://img.shields.io/badge/Notebook-Jupyter-orange)
 ![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+
 
 This project demonstrates how to build and evaluate an ARIMA model using Python to forecast the weekly closing prices of Apple Inc. (AAPL). It showcases a full time-series pipeline from data preprocessing to forecasting and evaluation using statistical modeling in Python.
 
