@@ -108,8 +108,9 @@ Green area = 2-week forecast with upper/lower confidence bounds.
 
 ```bash
 pip install pandas numpy matplotlib statsmodels
+```
 
-## 📁 Project Structure
+## Project Structure
 
 ARIMA-Financial-Time-Series/
 ├── Media/                             # Output charts and plots
