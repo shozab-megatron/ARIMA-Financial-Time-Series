@@ -110,7 +110,7 @@ Green area = 2-week forecast with upper/lower confidence bounds.
 pip install pandas numpy matplotlib statsmodels
 ```
 
-## Project Structure
+## 📁 Project Structure
 
 ARIMA-Financial-Time-Series/
 ├── Media/                             # Output charts and plots
@@ -124,7 +124,6 @@ ARIMA-Financial-Time-Series/
 ├── ARIMA_AAPL_Stock_Forecasting.ipynb # Main notebook
 ├── ARIMA_Model_Summary.pdf           # Exported ARIMA summary report
 └── README.md                         # This file
-
 
 ---
 
